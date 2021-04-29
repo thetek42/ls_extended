@@ -18,11 +18,11 @@
 #include "icons.h"
 
 // Default file icon is text file or normal link file
-#define DEFAULT_FILE_ICON "\uf15c"
-#define DEFAULT_LINK_FILE_ICON "\uf481"
+#define DEFAULT_FILE_ICON "\uf713"      // 
+#define DEFAULT_LINK_FILE_ICON "\uf71c" // 
 // Default directory icon is normal directory or normal link directory
-#define DEFAULT_DIR_ICON  "\uf07c"
-#define DEFAULT_LINK_DIR_ICON "\uf482"
+#define DEFAULT_DIR_ICON  "\uf74a"      // 
+#define DEFAULT_LINK_DIR_ICON "\uf751"  // 
 
 
 static const char * get_file_icon_by_ext( const char * ext, const bool is_link );
@@ -56,29 +56,30 @@ const char * get_file_icon( const char * name, const char * ext, const bool is_l
 
 const char * get_dir_icon( const char * dir, const bool is_link )
 {
-	if( BEGINS( dir, ".git, git" ) ) return "\ue5fd";
-	else if( BEGINS( dir, ".trash, trash" ) ) return "\uf1f8";
-	else if( BEGINS( dir, ".bash" ) ) return "\ue795";
-	else if( BEGINS( dir, ".bundle, .gem" ) ) return "\ue739";
-	else if( BEGINS( dir, ".cargo, .rustup" ) ) return "\ue7a8";
-	else if( BEGINS( dir, ".config" ) ) return "\ue5fc";
-	else if( BEGINS( dir, ".docker" ) ) return "\uf308";
-	else if( BEGINS( dir, ".go" ) ) return "\ue626";
-	else if( IS( dir, ".idea" ) ) return "\ue7b5";
-	else if( BEGINS( dir, ".mix" ) ) return "\ue62d";
-	else if( BEGINS( dir, ".npm, node_modules" ) ) return "\ue5fa";
-	else if( BEGINS( dir, ".vs, .vscode" ) ) return "\ue70c";
-	else if( BEGINS( dir, ".weechat" ) ) return "\ufbee";
-	else if( BEGINS( dir, "application" ) ) return "\ufb13";
-	else if( BEGINS( dir, "bin, config" ) ) return "\ue5fc";
-	else if( BEGINS( dir, "desktop" ) ) return "\uf108";
-	else if( BEGINS( dir, "download" ) ) return "\uf74c";
-	else if( BEGINS( dir, "library" ) ) return "\uf830";
-	else if( BEGINS( dir, "movie" ) ) return "\uf880";
-	else if( BEGINS( dir, "music, songs, audio" ) ) return "\uf832";
-	else if( BEGINS( dir, "photo, picture" ) ) return "\uf03e";
-	else if( IS( dir, "__pycache__" ) ) return "\uf81f";
-	else if( BEGINS( dir, "video" ) ) return "\uf03d";
+		 if( BEGINS( dir, ".git, git"           ) ) return "\ue5fb"; // 
+	else if( BEGINS( dir, ".trash, trash"       ) ) return "\uf6bf"; // 
+	else if( BEGINS( dir, ".bash"               ) ) return "\ue795"; // 
+	else if( BEGINS( dir, ".bundle, .gem"       ) ) return "\ue791"; // 
+	else if( BEGINS( dir, ".cargo, .rustup"     ) ) return "\ue7a8"; // 
+	else if( BEGINS( dir, ".config"             ) ) return "\ue5fc"; // 
+	else if( BEGINS( dir, ".docker"             ) ) return "\uf308"; // 
+	else if( BEGINS( dir, ".go"                 ) ) return "\ufcd1"; // ﳑ
+	else if( IS    ( dir, ".idea"               ) ) return "\ue7b5"; // 
+	else if( BEGINS( dir, ".mix"                ) ) return "\ue62d"; // 
+	else if( BEGINS( dir, ".npm, node_modules"  ) ) return "\ue5fa"; // 
+	else if( BEGINS( dir, ".vs, .vscode"        ) ) return "\ufb0f"; // ﬏
+	else if( BEGINS( dir, ".weechat"            ) ) return "\uf78b"; // 
+	else if( BEGINS( dir, "application"         ) ) return "\ufb13"; // ﬓ
+	else if( BEGINS( dir, "bin"                 ) ) return "\ufb13"; // ﬓ
+	else if( BEGINS( dir, "config"              ) ) return "\ue5fc"; // 
+	else if( BEGINS( dir, "desktop"             ) ) return "\uf878"; // 
+	else if( BEGINS( dir, "download"            ) ) return "\uf74c"; // 
+	else if( BEGINS( dir, "library"             ) ) return "\uf830"; // 
+	else if( BEGINS( dir, "movie"               ) ) return "\uf880"; // 
+	else if( BEGINS( dir, "music, songs, audio" ) ) return "\uf886"; // 
+	else if( BEGINS( dir, "photo, picture"      ) ) return "\uf74e"; // 
+	else if( IS    ( dir, "__pycache__"         ) ) return "\uf81f"; // 
+	else if( BEGINS( dir, "video"               ) ) return "\uf880"; // 
 
 	if( is_link ) return DEFAULT_LINK_DIR_ICON;
 	return DEFAULT_DIR_ICON;
@@ -86,94 +87,55 @@ const char * get_dir_icon( const char * dir, const bool is_link )
 
 static const char * get_file_icon_by_ext( const char * ext, const bool is_link )
 {
-	// OS
-
 	// Apple
-	if( IS( ext, "DS_Store" ) ) return "\ue711";
-
+	     if( IS    ( ext, "DS_Store"                  ) ) return "\uf534"; // 
 	// Configuration
-
-	else if( IS( ext, "json" ) ) return "\ufb25";
-	else if( IS( ext, "lock" ) ) return "\uf023";
-	else if( IS( ext, "ini, yaml, yml, env, toml" ) ) return "\ue615";
-
+	else if( IS    ( ext, "json"                      ) ) return "\ufb25"; // ﬥ
+	else if( IS    ( ext, "lock"                      ) ) return "\uf83d"; // 
+	else if( IS    ( ext, "ini, yaml, yml, env, toml" ) ) return "\uf423"; // 
 	// Data handling / manipulation
-
-	else if( IS( ext, "html" ) ) return "\ue60e";
-	else if( IS( ext, "md" ) ) return "\ue73e";
-	else if( IS( ext, "xml, ui" ) ) return "\ufabf";
-
+	else if( IS    ( ext, "html"                      ) ) return "\uf13b"; // 
+	else if( IS    ( ext, "md"                        ) ) return "\ue609"; // 
+	else if( IS    ( ext, "xml, ui"                   ) ) return "\uf44f"; // 
 	// Git
-
-	else if( BEGINS( ext, "git" ) ) return "\uf7a3";
-
+	else if( BEGINS( ext, "git"                       ) ) return "\uf7a3"; // 
 	// Terminal stuff
-
-	else if( IS( ext, "zsh, bash, sh" ) ) return "\ue795";
-	else if( BEGINS( ext, "zsh, bash" ) ) return "\ue615";
-	else if( BEGINS( ext, "vim" ) ) return "\ue7c5";
-
+	else if( IS    ( ext, "zsh, bash, sh"             ) ) return "\ue795"; // 
+	else if( BEGINS( ext, "zsh, bash"                 ) ) return "\uf423"; // 
+	else if( BEGINS( ext, "vim"                       ) ) return "\ue62b"; // 
 	// Databases
-	else if( IS( ext, "sql, sqlite" ) ) return "\ue706";
-
+	else if( IS    ( ext, "sql, sqlite"               ) ) return "\uf1c0"; // 
 	// Audio
-	// lossless
-	else if( IS( ext, LOSSLESS_AUDIO ) ) return "\uf001";
-	//lossy
-	else if ( IS( ext, LOSSY_AUDIO ) ) return "\ufc58";
-	// playlist
-	else if ( IS ( ext, PLAYLIST ) ) return "\uf910";
-	
+	else if( IS    ( ext, LOSSLESS_AUDIO              ) ) return "\uf886"; // 
+	else if( IS    ( ext, LOSSY_AUDIO                 ) ) return "\uf886"; // 
+	else if( IS    ( ext, PLAYLIST                    ) ) return "\ue602"; // 
 	// Video
-	else if ( IS( ext, VIDEO ) ) return "\uf03d";
-	// Languages
-
-	// C, C++
-	else if( IS( ext, "h, hh,hpp,hxx, h++" ) ) return "\ufd27";
-	else if( IS( ext, "c" ) ) return "\ufb70";
-	else if( IS( ext, "cc, cpp, cxx, c++" ) ) return "\ufb71";
-	// C#
-	else if( IS( ext, "cs" ) ) return "\uf81a";
-	// Closure
-	else if( IS( ext, "clj, cljs, cljc, edn" ) ) return "\ue76a";
-	// Coffeescript
-	else if( IS( ext, "coffee, litcoffee" ) ) return "\ue751";
-	// Elixir
-	else if( IS( ext, "ex, exs, eex" ) ) return "\ue62d";
-	// Elm
-	else if( IS( ext, "elm" ) ) return "\ue62c";
-	// Erlang
-	else if( IS( ext, "erl, hrl" ) ) return "\ue7b1";
-	// F-Sharp
-	else if( IS( ext, "fs, fsi, fsscript" ) ) return "\ue7a7";
-	// Go
-	else if( IS( ext, "go" ) ) return "\ue626";
-	// Haskell
-	else if( IS( ext, "hs, lhs" ) ) return "\ue777";
-	// Java
-	else if( IS( ext, "java, class, jar" ) ) return "\ue738";
-	// JS
-	else if( IS( ext, "js" ) ) return "\ue74e";
-	// Julia
-	else if( IS( ext, "jl" ) ) return "\ue624";
-	// Lua
-	else if( IS( ext, "lua" ) ) return "\ue620";
-	// Perl
-	else if( IS( ext, "pl, pm, t, pod" ) ) return "\ue769";
-	// Prolog
-	else if( IS( ext, "pro, P" ) ) return "\ue7a1";
-	// Python
-	else if( IS( ext, "py, pyc, pyd, pyx" ) ) return "\uf81f";
-	// Ruby
-	else if( IS( ext, "rb" ) ) return "\ue739";
-	// Rust
-	else if( IS( ext, "rs, rlib" ) ) return "\ue7a8";
-	// Scala
-	else if( IS( ext, "scala, sc" ) ) return "\ue737";
-	// Switft
-	else if( IS( ext, "swift" ) ) return "\ue755";
-	// Typescript
-	else if( IS( ext, "ts, tsx" ) ) return "\ufbe4";
+	else if( IS    ( ext, VIDEO                       ) ) return "\uf880"; // 
+	// Programming Languages
+	else if( IS    ( ext, "h, hh,hpp,hxx, h++"        ) ) return "\ufb70"; // ﭰ
+	else if( IS    ( ext, "c"                         ) ) return "\ufb70"; // ﭰ
+	else if( IS    ( ext, "cc, cpp, cxx, c++"         ) ) return "\ufb71"; // ﭱ
+	else if( IS    ( ext, "cs"                        ) ) return "\uf81a"; // 
+	else if( IS    ( ext, "clj, cljs, cljc, edn"      ) ) return "\ue76a"; // 
+	else if( IS    ( ext, "coffee, litcoffee"         ) ) return "\uf0f4"; // 
+	else if( IS    ( ext, "ex, exs, eex"              ) ) return "\ue62d"; // 
+	else if( IS    ( ext, "elm"                       ) ) return "\ue62c"; // 
+	else if( IS    ( ext, "erl, hrl"                  ) ) return "\ue7b1"; // 
+	else if( IS    ( ext, "fs, fsi, fsscript"         ) ) return "\ue7a7"; // 
+	else if( IS    ( ext, "go"                        ) ) return "\ufcd1"; // ﳑ
+	else if( IS    ( ext, "hs, lhs"                   ) ) return "\ue61f"; // 
+	else if( IS    ( ext, "java, class, jar"          ) ) return "\ue256"; // 
+	else if( IS    ( ext, "js"                        ) ) return "\uf81d"; // 
+	else if( IS    ( ext, "jl"                        ) ) return "\ue624"; // 
+	else if( IS    ( ext, "lua"                       ) ) return "\ue620"; // 
+	else if( IS    ( ext, "pl, pm, t, pod"            ) ) return "\ue769"; // 
+	else if( IS    ( ext, "pro, P"                    ) ) return "\ue7a1"; // 
+	else if( IS    ( ext, "py, pyc, pyd, pyx"         ) ) return "\uf81f"; // 
+	else if( IS    ( ext, "rb"                        ) ) return "\ue791"; // 
+	else if( IS    ( ext, "rs, rlib"                  ) ) return "\ue7a8"; // 
+	else if( IS    ( ext, "scala, sc"                 ) ) return "\ue737"; // 
+	else if( IS    ( ext, "swift"                     ) ) return "\ufbe3"; // ﯣ
+	else if( IS    ( ext, "ts, tsx"                   ) ) return "\ufbe4"; // ﯤ
 
 	if( is_link ) return DEFAULT_LINK_FILE_ICON;
 	return DEFAULT_FILE_ICON;
@@ -182,11 +144,11 @@ static const char * get_file_icon_by_ext( const char * ext, const bool is_link )
 static const char * get_file_icon_by_name( const char * name, const bool is_link )
 {
 	// Development
-	if( BEGINS( name, "Makefile" ) ) return "\ue779";
-	else if( BEGINS( name, "Dockerfile, docker-compose" ) ) return "\uf308";
+	if( BEGINS( name, "Makefile" ) ) return "\ue779"; // 
+	else if( BEGINS( name, "Dockerfile, docker-compose" ) ) return "\uf308"; // 
 
 	// Other
-	if( BEGINS( name, "LICENSE, license, copying, COPYING" ) ) return "\uf2c2";
+	if( BEGINS( name, "LICENSE, license, copying, COPYING" ) ) return "\uf69a"; // 
 	// TODO:
 	if( is_link ) return DEFAULT_LINK_FILE_ICON;
 	return DEFAULT_FILE_ICON;
