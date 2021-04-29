@@ -112,30 +112,38 @@ static const char * get_file_icon_by_ext( const char * ext, const bool is_link )
 	// Video
 	else if( IS    ( ext, VIDEO                       ) ) return "\uf880"; // 
 	// Programming Languages
-	else if( IS    ( ext, "h, hh,hpp,hxx, h++"        ) ) return "\ufb70"; // ﭰ
 	else if( IS    ( ext, "c"                         ) ) return "\ufb70"; // ﭰ
 	else if( IS    ( ext, "cc, cpp, cxx, c++"         ) ) return "\ufb71"; // ﭱ
 	else if( IS    ( ext, "cs"                        ) ) return "\uf81a"; // 
+	else if( IS    ( ext, "css"                       ) ) return "\ue749"; // 
 	else if( IS    ( ext, "clj, cljs, cljc, edn"      ) ) return "\ue76a"; // 
 	else if( IS    ( ext, "coffee, litcoffee"         ) ) return "\uf0f4"; // 
+	else if( IS    ( ext, "dart"                      ) ) return "\ue798"; // 
 	else if( IS    ( ext, "ex, exs, eex"              ) ) return "\ue62d"; // 
 	else if( IS    ( ext, "elm"                       ) ) return "\ue62c"; // 
 	else if( IS    ( ext, "erl, hrl"                  ) ) return "\ue7b1"; // 
 	else if( IS    ( ext, "fs, fsi, fsscript"         ) ) return "\ue7a7"; // 
 	else if( IS    ( ext, "go"                        ) ) return "\ufcd1"; // ﳑ
+	else if( IS    ( ext, "godot, gdscript"           ) ) return "\ufba7"; // ﮧ
+	else if( IS    ( ext, "h, hh, hpp, hxx, h++"      ) ) return "\ufb70"; // ﭰ
 	else if( IS    ( ext, "hs, lhs"                   ) ) return "\ue61f"; // 
 	else if( IS    ( ext, "java, class, jar"          ) ) return "\ue256"; // 
 	else if( IS    ( ext, "js"                        ) ) return "\uf81d"; // 
 	else if( IS    ( ext, "jl"                        ) ) return "\ue624"; // 
+	else if( IS    ( ext, "less"                      ) ) return "\ue758"; // 
 	else if( IS    ( ext, "lua"                       ) ) return "\ue620"; // 
+	else if( IS    ( ext, "nim"                       ) ) return "\uf6a4"; // 
 	else if( IS    ( ext, "pl, pm, t, pod"            ) ) return "\ue769"; // 
 	else if( IS    ( ext, "pro, P"                    ) ) return "\ue7a1"; // 
+	else if( IS    ( ext, "pug"                       ) ) return "\uf985"; // 礪
 	else if( IS    ( ext, "py, pyc, pyd, pyx"         ) ) return "\uf81f"; // 
 	else if( IS    ( ext, "rb"                        ) ) return "\ue791"; // 
 	else if( IS    ( ext, "rs, rlib"                  ) ) return "\ue7a8"; // 
+	else if( IS    ( ext, "sass, scss"                ) ) return "\ue603"; // 
 	else if( IS    ( ext, "scala, sc"                 ) ) return "\ue737"; // 
 	else if( IS    ( ext, "swift"                     ) ) return "\ufbe3"; // ﯣ
 	else if( IS    ( ext, "ts, tsx"                   ) ) return "\ufbe4"; // ﯤ
+	else if( IS    ( ext, "vala, vapi"                ) ) return "\ufa76"; // 勇
 
 	if( is_link ) return DEFAULT_LINK_FILE_ICON;
 	return DEFAULT_FILE_ICON;
